@@ -6,7 +6,6 @@ import keras
 from keras.models import load_model
 import cv2
 import json
-import rhino as rs
 
 #Face Detection
 
@@ -53,12 +52,8 @@ output_dict["label"] = predicted_label
 
 json_string = json.dumps(output_dict)
 
-filter = "JSON File (*.json)|*.json|All Files (*.*)\*.*||"
-json_file = rs.SaveFileName("Save JSON file as", filter)
-
-if json_file:
-  with open(json_string, 'w') as f:
-    json.dump(json_string, f)
+with open('json_file.json', 'w') as f:
+  json.dump(output_dict, f)
 
 """
 plt.imshow(face_image)
