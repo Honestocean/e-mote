@@ -9,7 +9,7 @@ import json
 
 #Face Detection
 
-image = face_recognition.load_image_file("test_images/040wrmpyTF5l.jpg")
+image = face_recognition.load_image_file("simon.jpg")
 face_locations = face_recognition.face_locations(image)
 
 
@@ -36,7 +36,7 @@ emotion_dict = {'Angry': 0, 'Sad': 5, 'Neutral': 4,
                 'Disgust': 1, 'Surprise': 6, 'Fear': 2, 'Happy': 3}
          
 
-face_image = cv2.imread("test_images/39.jpg")
+face_image = cv2.imread("image_1.jpg")
 face_image = cv2.resize(face_image, (48,48))
 face_image = cv2.cvtColor(face_image, cv2.COLOR_BGR2GRAY)
 face_image = np.reshape(face_image, [1, face_image.shape[0], face_image.shape[1], 1])
